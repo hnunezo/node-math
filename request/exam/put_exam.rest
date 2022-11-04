@@ -1,0 +1,9 @@
+PUT http://localhost:3001/api/exams/63653dc4b5aad9a255196139
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNjUzMTNjMjMyMzBkOGU3MjVlODE2ZCIsInVzZXJuYW1lIjoicGVjaG9ob3QiLCJpYXQiOjE2Njc1NzYxMzl9.RPnsaB_No9aAWMqAMNEnO3F0fuA5AtaxtC8ak6ZI88s
+
+{
+    "questions": ["asdasd","asdasdas"],
+    "grade": "501"
+
+}

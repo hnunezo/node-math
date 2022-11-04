@@ -5,12 +5,7 @@ const examSchema = mongoose.Schema({
   type: String,
   requirement: String,
   grade: String,
-  questions: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Question",
-    },
-  ],
+  questions: Array,
 });
 
 examSchema.set("toJSON", {

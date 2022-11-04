@@ -15,6 +15,5 @@ module.exports = (req, res, next) => {
 
   const { id: userId } = decodedToken;
   req.userId = userId;
-  console.log(userId);
   next();
 };
