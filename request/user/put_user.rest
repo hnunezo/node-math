@@ -1,0 +1,9 @@
+PUT http://localhost:3001/api/users/6364069f8f298c1ae1912932
+Content-Type: application/json 
+
+{
+    "fname": "ignacio",
+    "lname": "nunez",
+    "username": "pechohot",
+    "email": "hector.nunez.oviedo@gmail.com"
+}

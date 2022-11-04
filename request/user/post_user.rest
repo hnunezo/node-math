@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/users
+Content-Type: application/json 
+
+{
+    "fname": "hector",
+    "lname": "nunez",
+    "username": "pechohot",
+    "email": "hector.nunez.oviedo@gmail.com",
+    "password": "lapechopass"
+}
