@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 usersRouter.post("/", async (req, res, next) => {
   const { body } = req;
   const { username, password, fname, lname, email } = body;
+  console.log(body, "body");
+  console.log(username, "username");
 
   //password hash
   const saltRounds = 10;

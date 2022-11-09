@@ -20,26 +20,38 @@ examsRouter.get("/:id", async (req, res, next) => {
   }
 });
 
+examsRouter.get("/user/:id", async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const exam = await Exam.find({ userId: id });
+    res.json(exam);
+  } catch (err) {
+    next(err);
+  }
+});
+
 examsRouter.post("/", userExtractor, async (req, res, next) => {
   const { body } = req;
-  const { type, requirement, grade } = body;
+  const { type, requirement, grade, questions } = body;
 
   const { userId } = req;
+  console.log(userId);
 
   const user = await User.findById(userId);
 
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, "0");
-  let mm = String(today.getMonth() + 1).padStart(2, "0");
-  let yyyy = today.getFullYear();
-
-  today = mm + "/" + dd + "/" + yyyy;
+  var d = new Date();
+  var curr_date = d.getDate();
+  var curr_month = d.getMonth() + 1; //Months are zero based
+  var curr_year = d.getFullYear();
+  const finalDate = curr_date + "-" + curr_month + "-" + curr_year;
 
   const newExam = new Exam({
-    date: today,
+    date: finalDate,
     type,
     requirement,
     grade,
+    questions,
+    userId,
   });
 
   try {
@@ -55,6 +67,8 @@ examsRouter.post("/", userExtractor, async (req, res, next) => {
 examsRouter.put("/:id", userExtractor, async (req, res, next) => {
   const { id } = req.params;
   const { questions, grade } = req.body;
+  const { userId } = req;
+
   const exam = await Exam.findById(id);
 
   const examUpdated = {
@@ -63,6 +77,7 @@ examsRouter.put("/:id", userExtractor, async (req, res, next) => {
     requirement: exam.requirement,
     grade: grade,
     questions,
+    userId,
   };
 
   try {

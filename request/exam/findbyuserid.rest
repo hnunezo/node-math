@@ -1,0 +1,1 @@
+GET  http://localhost:3001/api/exams/user/6365952f1570facdf9b16c2d

@@ -1,11 +1,15 @@
 const mongoose = require("mongoose");
 
 const examSchema = mongoose.Schema({
-  date: Date,
+  date: String,
   type: String,
   requirement: String,
   grade: String,
   questions: Array,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 examSchema.set("toJSON", {

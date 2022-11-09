@@ -1,9 +1,10 @@
 POST http://localhost:3001/api/exams
 Content-Type: application/json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNjUzMTNjMjMyMzBkOGU3MjVlODE2ZCIsInVzZXJuYW1lIjoicGVjaG9ob3QiLCJpYXQiOjE2Njc1NzYxMzl9.RPnsaB_No9aAWMqAMNEnO3F0fuA5AtaxtC8ak6ZI88s
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNjU5NTJmMTU3MGZhY2RmOWIxNmMyZCIsInVzZXJuYW1lIjoicGVjaG9ob3QiLCJpYXQiOjE2Njc2MDE3MjZ9.BUm8-v02fGUXjUFAAhA74cigNiN_naIZY8NWGdKP7sU
 
 {
-    "type": "suma",
+    "type": "sumas",
     "requirement": "90%",
-    "grade": "60"
+    "grade": "60",
+    "questions": ["2","2"]
 }
